@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '@material-ui/core';
 
 const Title = styled.h1`
   color: red;
@@ -6,5 +7,12 @@ const Title = styled.h1`
 `;
 
 export default function Home() {
-  return <Title>My page</Title>;
+  return (
+    <>
+      <Title>My page</Title>
+      <Button variant='contained' disableElevation color='primary'>
+        TEST
+      </Button>
+    </>
+  );
 }
