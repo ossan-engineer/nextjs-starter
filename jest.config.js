@@ -1,5 +1,6 @@
 module.exports = {
   roots: ['<rootDir>'],
+  testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
@@ -8,7 +9,7 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      tsConfig: {
+      tsconfig: {
         jsx: 'react'
       },
       diagnostics: false
