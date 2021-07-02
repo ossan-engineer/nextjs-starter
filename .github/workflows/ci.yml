@@ -20,5 +20,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install modules
+        run: yarn
       - name: Run Jest
-        uses: yarn test
+        run: yarn test
