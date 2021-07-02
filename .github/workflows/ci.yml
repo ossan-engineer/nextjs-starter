@@ -21,4 +21,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.4
+        uses: yarn test
