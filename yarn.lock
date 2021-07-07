@@ -1107,7 +1107,12 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.0.0.tgz#557dd0da4a6dca1407481df3bbacae0cd6f68042"
   integrity sha512-YN1d+ae2MCb4U0mMa+Zlb5lWTdpFShbAj5nmte6lel27waMMBfivrm0prC16p/Di3DyTrmerrYUT8/145HXxVw==
 
-"@types/prettier@2.3.1", "@types/prettier@^2.1.5":
+"@types/prettier@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
+  integrity sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==
+
+"@types/prettier@^2.1.5":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.1.tgz#54dd88bdc7f49958329666af3779561e47d5dab3"
   integrity sha512-NVkb4p4YjI8E3O6+1m8I+8JlMpFZwfSbPGdaw0wXuyPRTEz0SLKwBUWNSO7Maoi8tQMPC8JLZNWkrcKPI7/sLA==
