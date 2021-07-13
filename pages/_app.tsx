@@ -8,9 +8,14 @@ import {
 } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import theme from '../styles/theme'
+import useHello from 'hooks/useHello'
+import theme from 'styles/theme'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const { data, loading, error } = useHello()
+
+  console.log(data, loading, error)
+
   // Remove the server-side injected CSS.(https://material-ui.com/guides/server-rendering/)
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side')
