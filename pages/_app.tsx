@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { AppProps } from 'next/app'
+import { SWRConfig } from 'swr'
+import axios from 'axios'
 
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import {
@@ -28,8 +30,18 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     <StylesProvider injectFirst>
       <MaterialUIThemeProvider theme={theme}>
         <StyledComponentsThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
+          <SWRConfig
+            value={{
+              fetcher: async (url: string) => {
+                const res = await axios.get(url)
+                const data = await res.data
+                return data
+              }
+            }}
+          >
+            <CssBaseline />
+            <Component {...pageProps} />
+          </SWRConfig>
         </StyledComponentsThemeProvider>
       </MaterialUIThemeProvider>
     </StylesProvider>
