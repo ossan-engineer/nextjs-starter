@@ -53,17 +53,19 @@ const DATA = [
 
 const userHandler = (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    query: { page },
+    query: { page, limit = 10 },
     method
   } = req
 
+  const filteredData = DATA.filter(
+    (_, index) =>
+      index >= (Number(page) - 1) * Number(limit) &&
+      index < Number(page) * Number(limit)
+  )
+
   switch (method) {
     case 'GET':
-      res
-        .status(200)
-        .json(
-          DATA.filter((d) => d.id >= Number(page) && d.id <= Number(page) + 2)
-        )
+      res.status(200).json(filteredData)
       break
     default:
       res.setHeader('Allow', ['GET'])
