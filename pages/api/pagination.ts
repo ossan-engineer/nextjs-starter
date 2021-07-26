@@ -2,10 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 const DATA = [
   {
-    id: 0,
-    title: '---'
-  },
-  {
     id: 1,
     title: 'aaa'
   },
@@ -57,7 +53,7 @@ const DATA = [
 
 const userHandler = (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    query: { index },
+    query: { page },
     method
   } = req
 
@@ -66,7 +62,7 @@ const userHandler = (req: NextApiRequest, res: NextApiResponse) => {
       res
         .status(200)
         .json(
-          DATA.filter((d) => d.id >= Number(index) && d.id <= Number(index) + 2)
+          DATA.filter((d) => d.id >= Number(page) && d.id <= Number(page) + 2)
         )
       break
     default:
