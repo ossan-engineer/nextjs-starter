@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { InferGetStaticPropsType } from 'next'
 
 import { client } from 'libs/client'
 
