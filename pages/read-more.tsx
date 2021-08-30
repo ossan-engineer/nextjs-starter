@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
-import { useSWRInfinite } from 'swr'
+import useSWRInfinite from 'swr/infinite'
 
 const ReadMore = () => {
   const { data, size, setSize } = useSWRInfinite<
