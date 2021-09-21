@@ -1,60 +1,21 @@
 import React from 'react'
-import NextDocument, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-  DocumentInitialProps
-} from 'next/document'
-import { RenderPageResult } from 'next/dist/shared/lib/utils'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import MaterialServerStyleSheets from '@mui/styles/ServerStyleSheets'
 
-export default class CustomDocument extends NextDocument {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
-    const styledComponentsSheet = new ServerStyleSheet()
-    const materialUiSheets = new MaterialServerStyleSheets()
-    const originalRenderPage = ctx.renderPage
+import theme from 'styles/theme'
 
-    try {
-      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
-        originalRenderPage({
-          enhanceApp:
-            (App) =>
-            (
-              props
-            ): React.ReactElement<{
-              sheet: ServerStyleSheet
-            }> =>
-              styledComponentsSheet.collectStyles(
-                materialUiSheets.collect(<App {...props} />)
-              )
-        })
-
-      const initialProps = await NextDocument.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: [
-          <React.Fragment key="styles">
-            {initialProps.styles}
-            {styledComponentsSheet.getStyleElement()}
-            {materialUiSheets.getStyleElement()}
-          </React.Fragment>
-        ]
-      }
-    } finally {
-      styledComponentsSheet.seal()
-    }
-  }
-
-  render(): React.ReactElement {
+// https://material-ui.com/styles/advanced/#next-js
+export default class MyDocument extends Document {
+  render() {
     return (
-      <Html lang="ja-JP">
+      <Html lang="en">
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          {/* PWA primary color */}
+          <meta content={theme.palette.primary.main} name="theme-color" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
@@ -62,5 +23,31 @@ export default class CustomDocument extends NextDocument {
         </body>
       </Html>
     )
+  }
+}
+
+// https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
+MyDocument.getInitialProps = async (ctx) => {
+  const sheet = new ServerStyleSheet()
+  const originalRenderPage = ctx.renderPage
+
+  try {
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
+      })
+
+    const initialProps = await Document.getInitialProps(ctx)
+    return {
+      ...initialProps,
+      styles: (
+        <React.Fragment>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </React.Fragment>
+      )
+    }
+  } finally {
+    sheet.seal()
   }
 }
