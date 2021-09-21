@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 
 const Title = styled.h1`
   color: blue;

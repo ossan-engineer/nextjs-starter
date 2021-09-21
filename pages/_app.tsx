@@ -3,15 +3,23 @@ import { AppProps } from 'next/app'
 import { SWRConfig } from 'swr'
 import axios from 'axios'
 
-import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
+import {
+  ThemeProvider as StyledComponentsThemeProvider,
+  Theme,
+  StyledEngineProvider
+} from 'styled-components'
 import {
   ThemeProvider as MaterialUIThemeProvider,
   StylesProvider
-} from '@material-ui/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+} from '@mui/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 
 import useHello from 'hooks/useHello'
 import theme from 'styles/theme'
+
+declare module '@mui/styles/defaultTheme' {
+  interface DefaultTheme extends Theme {}
+}
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const { data, loading, error } = useHello()

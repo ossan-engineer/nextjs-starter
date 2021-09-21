@@ -9,7 +9,7 @@ import NextDocument, {
 } from 'next/document'
 import { RenderPageResult } from 'next/dist/shared/lib/utils'
 import { ServerStyleSheet } from 'styled-components'
-import { ServerStyleSheets as MaterialServerStyleSheets } from '@material-ui/core'
+import MaterialServerStyleSheets from '@mui/styles/ServerStyleSheets'
 
 export default class CustomDocument extends NextDocument {
   static async getInitialProps(
