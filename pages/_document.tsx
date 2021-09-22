@@ -1,7 +1,6 @@
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-
 import theme from 'styles/theme'
 
 // https://material-ui.com/styles/advanced/#next-js
