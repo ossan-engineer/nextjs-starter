@@ -1,11 +1,13 @@
-import CssBaseline from '@mui/material/CssBaseline'
-import { ThemeProvider } from '@mui/material/styles'
-import axios from 'axios'
-import useHello from 'hooks/useHello'
-import { AppProps } from 'next/app'
 import React from 'react'
-import theme from 'styles/theme'
+import { AppProps } from 'next/app'
 import { SWRConfig } from 'swr'
+import axios from 'axios'
+
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+
+import useHello from 'hooks/useHello'
+import theme from 'styles/theme'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const { data, loading, error } = useHello()

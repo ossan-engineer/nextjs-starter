@@ -1,6 +1,7 @@
-import { Button } from '@mui/material'
-import Data from 'components/Data'
 import React, { useState } from 'react'
+import { Button } from '@mui/material'
+
+import Data from 'components/Data'
 
 const Pagination = () => {
   const [page, setPage] = useState(1)
