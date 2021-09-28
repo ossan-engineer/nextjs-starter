@@ -15,8 +15,8 @@
     "deploy-storybook": "storybook-to-ghpages  -- --out=.storybook-static"
   },
   "dependencies": {
-    "@mui/icons-material": "5.0.0",
-    "@mui/material": "5.0.0",
+    "@mui/icons-material": "5.0.1",
+    "@mui/material": "5.0.1",
     "@mui/styled-engine-sc": "5.0.0",
     "axios": "0.21.4",
     "microcms-js-sdk": "1.2.0",
