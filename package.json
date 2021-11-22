@@ -46,7 +46,7 @@
     "@types/styled-components": "5.1.15",
     "@types/testing-library__jest-dom": "5.14.1",
     "babel-loader": "8.2.3",
-    "babel-plugin-styled-components": "1.13.3",
+    "babel-plugin-styled-components": "2.0.1",
     "eslint": "8.1.0",
     "eslint-config-next": "11.1.2",
     "identity-obj-proxy": "3.0.0",
