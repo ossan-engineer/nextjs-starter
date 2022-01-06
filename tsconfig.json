@@ -3,7 +3,10 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
@@ -20,7 +23,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": ".",
+    "incremental": true
   },
-  "exclude": ["node_modules", ".next", "out"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js"
+  ]
 }
