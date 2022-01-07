@@ -1,6 +1,7 @@
 import React from 'react'
 import { styled } from '@mui/material/styles'
-import { Button } from '@mui/material'
+
+import Link from 'components/Link'
 
 const Title = styled('h1')`
   color: blue;
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Title>My page</Title>
-      <Button>TEST</Button>
+      <Link href="/read-more">TEST</Link>
     </>
   )
 }
