@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 import Link from 'components/Link'
@@ -8,13 +9,21 @@ const Title = styled('h1')`
   font-size: 50px;
 `
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <Title>My page</Title>
-      <Link href="/read-more">TEST</Link>
+      <Button LinkComponent={Link} href="/events">
+        EVENTS
+      </Button>
+      <Button LinkComponent={Link} href="/events/hoge">
+        EVENT
+      </Button>
+      <Button LinkComponent={Link} href="/events/hoge/fuga">
+        EVENT_SLUG
+      </Button>
     </>
   )
 }
 
-export default Home
+export default HomePage
