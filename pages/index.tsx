@@ -3,6 +3,8 @@ import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 import Link from 'components/Link'
+import { getFeaturedEvents } from 'dummy-data'
+import EventList from '@/components/EventList'
 
 const Title = styled('h1')`
   color: blue;
@@ -10,6 +12,8 @@ const Title = styled('h1')`
 `
 
 const HomePage: React.FC = () => {
+  const featuredEvents = getFeaturedEvents()
+
   return (
     <>
       <Title>My page</Title>
@@ -22,6 +26,7 @@ const HomePage: React.FC = () => {
       <Button LinkComponent={Link} href="/events/hoge/fuga">
         EVENT_SLUG
       </Button>
+      <EventList items={featuredEvents}></EventList>
     </>
   )
 }
