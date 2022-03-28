@@ -16,6 +16,12 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
+     - name: Create dot env file
+      - shell: bash
+        run: |
+          touch .env
+          echo "NEXT_PUBLIC_SERVICE_DOMAIN=${{ secrets.NEXT_PUBLIC_SERVICE_DOMAIN }}" >> .env
+          echo "NEXT_PUBLIC_API_KEY=${{ secrets.NEXT_PUBLIC_API_KEY }}" >> .env
       - uses: actions/checkout@v2
 
       - name: Set up node
