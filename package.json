@@ -59,7 +59,7 @@
   },
   "license": "MIT",
   "nextBundleAnalysis": {
-    "budget": null,
+    "budget": 358400,
     "budgetPercentIncreaseRed": 20,
     "showDetails": true
   }
