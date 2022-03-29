@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - main # change this if your default branch is named differently
+      - master # change this if your default branch is named differently
   workflow_dispatch:
 
 defaults:
@@ -16,14 +16,13 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
-     - name: Create dot env file
+      - name: Create dot env file
       - shell: bash
         run: |
           touch .env
           echo "NEXT_PUBLIC_SERVICE_DOMAIN=${{ secrets.NEXT_PUBLIC_SERVICE_DOMAIN }}" >> .env
           echo "NEXT_PUBLIC_API_KEY=${{ secrets.NEXT_PUBLIC_API_KEY }}" >> .env
       - uses: actions/checkout@v2
-
       - name: Set up node
         uses: actions/setup-node@v1
         with:
