@@ -31,10 +31,10 @@
     "swr": "1.2.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.4.20",
-    "@storybook/addon-essentials": "6.4.20",
-    "@storybook/addon-links": "6.4.20",
-    "@storybook/react": "6.4.20",
+    "@storybook/addon-actions": "6.4.22",
+    "@storybook/addon-essentials": "6.4.22",
+    "@storybook/addon-links": "6.4.22",
+    "@storybook/react": "6.4.22",
     "@storybook/storybook-deployer": "2.8.11",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.0.0",
